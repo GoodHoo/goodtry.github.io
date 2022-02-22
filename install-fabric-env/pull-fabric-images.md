@@ -14,7 +14,7 @@ docker pull hyperledger/fabric-couchdb:0.4.10
 
 docker tag hyperledger/fabric-peer:1.2.0 hyperledger/fabric-peer && 
 docker tag hyperledger/fabric-orderer:1.2.0 hyperledger/fabric-orderer && 
-docker tag hyperledger/fabric-ca:$CA_TAG hyperledger/fabric-ca && 
+docker tag hyperledger/fabric-ca:1.2.0 hyperledger/fabric-ca && 
 docker tag hyperledger/fabric-tools:1.2.0 hyperledger/fabric-tools && 
 docker tag hyperledger/fabric-ccenv:1.2.0 hyperledger/fabric-ccenv && 
 docker tag hyperledger/fabric-baseimage:0.4.10  hyperledger/fabric-baseimage && 
