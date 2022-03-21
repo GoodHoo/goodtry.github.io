@@ -1,6 +1,6 @@
-#基于Fabric的农产品溯源系统  
+# 基于Fabric的农产品溯源系统  
 
-## 介绍
+# 介绍
     
 基于区块链的农产品溯源系统，分为pc端，h5端，后台采用SpringBoot，前端Vue，
 区块链网络采用Fabric，一共分为六个组织节点，农户，原料厂商，生产厂商，物流厂商，零售商，消费者  
@@ -8,7 +8,7 @@
 若有疑问，可关注公众号获取联系方法，点击联系作者，消息回晚了别在意，都会回复的(出怎么安装mysql，redis，数据库怎么连不上，redis怎么连不上等问题)，感谢您的支持。    
 ![输入图片说明](install-fabric-env/image.png)
 
-## 软件架构
+# 软件架构
 
 此系统有四个模块， blockchain-trace-bcnetwork ，blockchain-trace-applets ，blockchain-trace-pc ，blockchain-trace-basic-data。
 
