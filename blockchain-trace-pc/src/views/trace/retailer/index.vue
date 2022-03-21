@@ -1,8 +1,6 @@
 <template>
 	<div class="app-container">
-
 		<el-divider>待处理业务</el-divider>
-
 		<br />
 		<el-table :data="transportList">
 			<el-table-column type="selection" width="55" align="center" />
@@ -19,7 +17,7 @@
 			<el-table-column label="操作" align="center" class-name="small-padding fixed-width">
 				<template slot-scope="scope">
 					<el-button v-show="scope.row.retailerReceiveStatus === null" size="mini" type="text" @click="receive(scope.row)">签收</el-button>
-<!--					<el-button size="mini" type="text" @click="noticeTransport(scope.row)">打印条形码</el-button>-->
+					<el-button size="mini" type="text" @click="generateQrCode(scope.row)">生成溯源码</el-button>
 					<el-button size="mini" type="text" @click="getTraceId(scope.row)">获取产品溯源ID</el-button>
 				</template>
 			</el-table-column>
@@ -96,6 +94,7 @@ import { formatDate } from '../../../utils/index.js';
 import {uplodImagesBase64,getAllDriverByDeptId,getFactoryByDeptId} from '../../../api/trace/farmer';
 import {queryCropsList } from '../../../api/trace/product';
 import {updateReceiveStatus } from '../../../api/trace/retailer';
+import QrCode from 'qrcodejs2'
 export default {
 	name: 'Dept',
 	components: { Treeselect },
@@ -149,6 +148,17 @@ export default {
 	},
 
 	methods: {
+	  //生成产品溯源码
+    generateQrCode(productInfo){
+      let qrcode = new QRCode('qrcode', {
+        width: 132,
+        height: 132,
+        text: 'http://1.117.208.193:12011/#/login?redirect=%2Findex', // 需要二维码跳转的地址
+        colorDark: "yellow", //前景色
+        colorLight: "green", //背景色
+      })
+    },
+
 		//获取产品溯源ID
 		getTraceId(row){
 			const retailerArray = []
