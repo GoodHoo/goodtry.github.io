@@ -131,7 +131,7 @@ chmod -R 777 startFarmerCC.sh
         width: 60
         height: 60
       tracker-list: 127.0.0.1:22122
-      address: 127.0.0.1
+      address: http://127.0.0.1:8888/
 ```
 ### 2.修改application-druid.yml文件中mysql地址  
 ```yaml
